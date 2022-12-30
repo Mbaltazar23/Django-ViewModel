@@ -1,0 +1,15 @@
+{% extends 'core/base.html' %} {% block content %}
+
+<main class="contenedor employees-principal">
+  <div class="informacion-employee">
+    <h2><strong>NOMBRE</strong> : &nbsp; {{ object.name }}</h2>
+    <h3><strong>DESCRIPCION</strong> : &nbsp; {{ object.lastname }}</h3>
+    <h3>
+      <strong>AREA-TRABAJO</strong> : &nbsp; {% for c in object.area.all %}
+      {{c.name}} {% endfor %}
+    </h3>
+    <a class="btn btn-light" href="{% url 'department_list' %}">Back to List</a>
+  </div>
+</main>
+
+{% endblock %}
